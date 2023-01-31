@@ -1,3 +1,4 @@
+<?php include __DIR__ .'/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,19 +9,9 @@
 	</head>
 	<body>
 		<form action="./index.php" method="GET">
-			<input type="number" name="length" id="">
+			<input type="number" name="length">
 			<button type="submit">Invia</button>
 		</form>
-
-		<?php 
-			if (isset($_GET['length'])) {
-				$length = $_GET['length'];
-				$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;':<>,.?\/";
-				$password = substr(str_shuffle($chars), 0, $length);
-				echo "La tua password è: $password";
-			}
-		?>
-
-
+		<h1><?php echo generate_password($_GET["length"]) ?></h1>
 	</body>
 </html>
