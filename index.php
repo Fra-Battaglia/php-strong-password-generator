@@ -1,4 +1,3 @@
-<?php include __DIR__ .'/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,10 +7,9 @@
 		<title>PHP Strong Password Generator</title>
 	</head>
 	<body>
-		<form action="./index.php" method="GET">
+		<form action="./showpassword.php" method="GET">
 			<input type="number" name="length">
 			<button type="submit">Invia</button>
 		</form>
-		<h1><?php echo generate_password($_GET["length"]) ?></h1>
 	</body>
 </html>
